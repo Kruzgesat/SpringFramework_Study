@@ -5,6 +5,17 @@ spring:
   application:
   name: seokminshop
 
+  devtools:
+    livereload:
+      enabled: true #Reloading
+    restart:
+      enabled: true #Restarting
+
+  thymeleaf:
+    cache: false #Disable cache
+
+
+  #MySQL Connection
   datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/spring_A

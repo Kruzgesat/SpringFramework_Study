@@ -17,7 +17,7 @@ public class StartController {
                 .dept("컴퓨터시스템공학과")
                 .build();
 
-        model.addAttribute("data", "스프링부트");
-        return "start";
+        model.addAttribute("data", startDto);
+        return "temp/temp";
     }
 }
