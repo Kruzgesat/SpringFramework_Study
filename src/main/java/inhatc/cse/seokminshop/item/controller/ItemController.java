@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class ItemController {
 
@@ -35,4 +38,68 @@ public class ItemController {
 
         return "/item/thymeleaf2";
     }
+
+    @GetMapping("item/thymeleaf3")
+    public String thymeleaf3(ItemDto ItemDto,
+                             Model model)  {
+
+        List<ItemDto> itemDtoList = new ArrayList<>();
+
+        for (int i = 1; i <= 10; i++) {
+            ItemDto itemDto =ItemDto.builder()
+                    .id((long) i)
+                    .itemNm("상품" + i)
+                    .itemDetail("상품 상세 설명" + i)
+                    .price(10000 * i)
+                    .stockNumber(100 + i)
+                    .build();
+
+            itemDtoList.add(itemDto);
+        }
+        model.addAttribute("item", itemDtoList);
+        return "/item/thymeleaf3";
+    }
+
+    @GetMapping("item/thymeleaf4")
+    public String thymeleaf4(ItemDto ItemDto,
+                             Model model)  {
+
+        List<ItemDto> itemDtoList = new ArrayList<>();
+
+        for (int i = 1; i <= 10; i++) {
+            ItemDto itemDto =ItemDto.builder()
+                    .id((long) i)
+                    .itemNm("상품" + i)
+                    .itemDetail("상품 상세 설명" + i)
+                    .price(10000 * i)
+                    .stockNumber(100 + i)
+                    .build();
+
+            itemDtoList.add(itemDto);
+        }
+        model.addAttribute("item", itemDtoList);
+        return "/item/thymeleaf4";
+    }
+
+    @GetMapping("item/thymeleaf5")
+    public String thymeleaf5(ItemDto ItemDto,
+                             Model model)  {
+
+        List<ItemDto> itemDtoList = new ArrayList<>();
+
+        for (int i = 1; i <= 10; i++) {
+            ItemDto itemDto =ItemDto.builder()
+                    .id((long) i)
+                    .itemNm("상품" + i)
+                    .itemDetail("상품 상세 설명" + i)
+                    .price(10000 * i)
+                    .stockNumber(100 + i)
+                    .build();
+
+            itemDtoList.add(itemDto);
+        }
+        model.addAttribute("item", itemDtoList);
+        return "/item/thymeleaf5";
+    }
+
 }
