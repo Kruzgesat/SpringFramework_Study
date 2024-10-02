@@ -11,13 +11,14 @@ public class StartController {
     @GetMapping("/")
     public String start(Model model) {
 
-        StartDto startDto = StartDto.builder()
-                .name("홍길동")
-                .grade(1)
-                .dept("컴퓨터시스템공학과")
-                .build();
+//        StartDto startDto = StartDto.builder()
+//                .name("홍길동")
+//                .grade(1)
+//                .dept("컴퓨터시스템공학과")
+//                .build();
+//
+//        model.addAttribute("data", startDto);
 
-        model.addAttribute("data", startDto);
         return "temp/temp";
     }
 }
